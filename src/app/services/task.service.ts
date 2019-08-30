@@ -4,6 +4,7 @@ import { Paliativos } from './../interfaces/paliativos';
 import { Epoc } from './../interfaces/epoc';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +29,15 @@ export class TaskService {
     //const path = 'http://estadisticas.x10host.com/todos';
     let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
     return this.http.get<Epoc[]>(path,{headers:headers});
+  }
+
+  getEpoc(id: number): Observable<Epoc>
+  {
+    //const url = `${this.heroesUrl}/${id}`;
+    const path = '/todos.php/${id}';
+    let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
+    return this.http.get<Epoc[]>(path, { headers: headers }).pipe(
+      map(pacientes => pacientes[0]));
+
   }
 }

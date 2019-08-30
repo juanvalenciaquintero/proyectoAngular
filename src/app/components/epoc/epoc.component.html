@@ -3,7 +3,7 @@
 </a>
 <ul class="pacientes">
     <li *ngFor="let paciente of pacientesEpoc">
-      <a routerLink="">
+      <a routerLink="epoc/detail/{{paciente.id}}">
         <span >{{ paciente.id }}</span> {{ paciente.nuhsa }}
       </a>
     </li>
