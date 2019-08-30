@@ -1,0 +1,7 @@
+{
+  "/todos*" : {
+    "target": "http://estadisticas.x10host.com",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
