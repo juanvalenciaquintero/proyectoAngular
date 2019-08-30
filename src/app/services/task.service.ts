@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Task } from './../interfaces/task';
+import { Paliativos } from './../interfaces/paliativos';
+import { Epoc } from './../interfaces/epoc';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 
@@ -11,12 +12,21 @@ export class TaskService {
   private cadena: string;
   constructor(private http: HttpClient) { }
 
-  getAllTasks(): Observable<Task[]>
+  getAllPaliativos(): Observable<Paliativos[]>
   {
-    const path = 'http://estadisticas.x10host.com/todos.php?valor=1';
+    const path = '/todos.php?valor=1';
     //const path = 'https://jsonplaceholder.typicode.com/todos';
     //const path = 'http://estadisticas.x10host.com/todos';
     let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
-    return this.http.get<Task[]>(path,{headers:headers});
+    return this.http.get<Paliativos[]>(path,{headers:headers});
+  }
+
+  getAllEpoc(): Observable<Epoc[]>
+  {
+    const path = '/todos.php?valor=2';
+    //const path = 'https://jsonplaceholder.typicode.com/todos';
+    //const path = 'http://estadisticas.x10host.com/todos';
+    let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
+    return this.http.get<Epoc[]>(path,{headers:headers});
   }
 }

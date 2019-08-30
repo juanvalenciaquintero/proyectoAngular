@@ -1,4 +1,5 @@
-import { Task } from './../../interfaces/task';
+import { Paliativos } from './../../interfaces/paliativos';
+
 import { TaskService } from './../../services/task.service';
 
 import { Component, OnInit } from '@angular/core';
@@ -11,19 +12,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaliativosComponent implements OnInit {
 
-  pacientes: Task[];
+  pacientesPal: Paliativos[];
+
+  
   constructor(private taskService:TaskService) { }
 
   ngOnInit()
   {
-    this.getAllTasks();
+    this.getAllPaliativos();
   }
 
-  getAllTasks(): void
+  getAllPaliativos(): void
   {
-    this.taskService.getAllTasks()
-    .subscribe(pacientes => this.pacientes = pacientes);
-    console.log('pacientes:' + this.pacientes);
+    this.taskService.getAllPaliativos()
+    .subscribe(pacientes => this.pacientesPal = pacientes);
+    console.log('pacientes:' + this.pacientesPal);
   }
+
+
+ 
+
+
 
 }

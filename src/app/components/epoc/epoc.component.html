@@ -1,0 +1,10 @@
+<a routerLink="/epoc">
+  <h2>Pacientes Epoc</h2>
+</a>
+<ul class="pacientes">
+    <li *ngFor="let paciente of pacientesEpoc">
+      <a routerLink="">
+        <span >{{ paciente.id }}</span> {{ paciente.nuhsa }}
+      </a>
+    </li>
+  </ul>
