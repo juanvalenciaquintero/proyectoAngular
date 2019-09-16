@@ -1,0 +1,568 @@
+
+.navbar {
+  position: relative;
+  /* display: -ms-flexbox; */
+  display: flex;
+  /* -ms-flex-wrap: wrap;
+  flex-wrap: wrap; */
+  /* -ms-flex-align: center; */
+  align-items: center;
+  /* -ms-flex-pack: justify;
+  justify-content: space-between; */
+  padding: .5rem 1rem;
+}
+
+.navbar-nav {
+  display: -ms-flexbox;
+  display: flex;
+
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: .5rem;
+  padding-left: .5rem;
+}
+
+.nav-link {
+  display: block;
+  padding: .5rem 1rem;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+
+table {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 2px;
+  border-color: grey;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+.table td, .table th {
+padding: .75rem;
+vertical-align: top;
+border-top: 1px solid #dee2e6;
+}
+
+th {
+display: table-cell;
+vertical-align: inherit;
+font-weight: bold;
+text-align: -internal-center;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+background-color: rgba(0,0,0,.05);
+}
+#contenedor
+{
+width:100%;
+}
+
+#botones
+{
+  width:60%;
+  margin:0 auto;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.select_varios
+
+{
+
+  margin-bottom: 0.2rem !important;
+
+  margin-top:0.2rem !important;
+
+}
+
+
+.tabla_principal
+
+{
+
+  width:80% !important;
+
+   margin:0px auto;
+
+}
+
+
+.tabla_principal td{
+
+  padding:0.2rem !important;
+
+}
+
+
+/*  #tabla_principal_epoc, #tabla_principal_paliativo
+
+{	width:60%;
+
+   margin:0px auto;
+
+}   */
+
+
+#tabla_principal_epoc thead tr:first-child>th:nth-child(2) , #tabla_principal_paliativo thead tr:first-child>th:nth-child(2)
+
+{
+
+  text-align: right;
+
+}
+
+
+.prim_col
+
+{
+
+  /*width:250px;*/
+
+}
+
+
+.medio
+
+{
+
+ /* width:150px;*/
+
+}
+
+
+#cuestionario_cat, #cuestionario_cat_2, #cuestionario_cat_3, #cuestionario_gisps3, #cuestionario_gisps3_2 ,#cuestionario_gisps3_3
+
+{
+
+  margin:0 auto;
+
+  position:fixed;
+
+  top:5vh;
+
+  left:20px;
+
+  display:none;
+
+  border:1px solid;
+
+  width:90%;
+
+  background-color:white;
+
+  overflow: auto;
+
+}
+
+
+#cuestionario_gisps3 td:first-child
+
+{
+
+  width:50%;
+
+}
+
+
+.botones
+
+{
+
+  display:flex;
+
+  flex-direction: row;
+
+  justify-content: space-evenly;
+
+  align-items: center;
+
+  padding:0.3rem;
+
+}
+
+
+.impar
+
+{
+
+  background-color: rgba(0,0,0,.05);
+
+}
+
+
+input[type='radio']
+
+{
+
+  width:20px;
+
+  height:20px;
+
+}
+
+
+#boton_term_cat
+
+{
+
+  margin: 10px 100px ;
+
+}
+
+
+.nuhsa
+
+{
+
+  position:absolute;
+
+  background-color: white;
+
+
+  border:1px solid;
+
+  z-index: 1000;
+
+  top: 195px;
+
+  left: 120px;
+
+  width:200px;
+
+  display:none;
+
+}
+
+
+.nuhsa table
+
+{
+
+  width:100%;
+
+}
+
+
+#fecha_com
+
+{
+
+  width:30%;
+
+}
+
+
+#cuestionario_cat table{
+
+  width:100%;
+
+}
+
+
+.filtros
+
+{
+
+  padding:10px;
+
+  display:inline-block;
+
+}
+
+#filtros
+
+{
+
+  display:flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+}
+@media (min-width: 992px)
+{
+.navbar-expand-lg {
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+}
+@media screen and (max-width: 990px)
+
+{
+
+
+.select_varios
+
+{
+
+height:32px !important;
+
+font-size:0.7rem  !important;
+
+margin-bottom: 0.2rem !important;
+
+margin-top:0.2rem !important;
+
+}
+
+.tabla_principal
+
+{
+
+  width:95% !important;
+
+   font-size:0.7rem;
+
+
+}
+
+  #tabla_principal_epoc,#tabla_principal_paliativo
+
+  {
+
+   font-size:0.7rem;
+
+  }
+
+
+  #filtros
+
+{
+
+  flex-direction: column;
+
+}
+
+  .filtros
+
+{
+
+  display:block;
+
+}
+
+
+#cuestionario_cat, #cuestionario_cat_2, #cuestionario_cat_3,  #cuestionario_gisps3, #cuestionario_gisps3_2, #cuestionario_gisps3_3
+
+{
+
+  width:90%;
+
+  font-size:0.7rem;
+
+}
+
+input[type='radio']
+
+{
+
+  width:0.7rem;
+
+  height:0.7rem;
+
+}
+
+
+}
+
+
+@media screen and (max-width: 130px)
+
+{
+
+  .filtros
+
+{
+
+  padding:20px;
+
+  font-size:40px;
+
+}
+
+  .navbar-brand
+
+  {
+
+    font-size:60px !important;
+
+  }
+
+
+  .navbar-collapse ul li a
+
+  {
+
+    font-size:50px !important;
+
+  }
+
+
+  #tabla_principal_epoc,#tabla_principal_paliativo, #span_nuhsa, #nuhsa, #select_tipo_v, #select_proc, #contacto_48,#cat, #sat, #sat1, #sat2, #sat3, #tto_inhalador1,#tto_inhalador, #tto_inhalador2, #tto_inhalador3,#alarma, #fuma, #fuma1, #fuma2, #fuma3, #int_antitabaco, #rehabilitacion, #oxigeno, #oxigeno1, #oxigeno2, #oxigeno3,#disfagia,  #disfagia1, #disfagia2, #disfagia3,#gripe, #neumococo, #pap, #fin_seguimiento, #ugc
+
+  {
+
+    font-size:35px;
+
+  }
+
+
+  #fecha_com
+
+  {
+
+    width:350px;
+
+  }
+
+
+  input
+
+  {
+
+    width:100%;
+
+    font-size: 50px;
+
+  }
+
+
+  select
+
+  {
+
+    font-size: 50px;
+
+  }
+
+
+  input[type='radio']
+
+  {
+
+    width:40px;
+
+    height:40px;
+
+  }
+
+
+  #tabla_principal_paliativo, #tabla_principal_epoc
+
+  {
+
+    width:90%;
+
+  }
+
+
+  #tabla_principal_paliativo td:nth-child(2) div,#tabla_principal_epoc td:nth-child(2) div
+
+  {
+
+    width:320px;
+
+  }
+
+
+  #cuestionario_cat, #cuestionario_gisps3, #cuestionario_cat_2, #cuestionario_cat_3, #cuestionario_gisps3_2, #cuestionario_gisps3_3
+
+  {
+
+    height:80vh;
+
+    overflow: scroll;
+
+  }
+
+
+  #cuestionario_cat table, #cuestionario_cat2 table, #cuestionario_cat3 table,#cuestionario_gisps3 table, #cuestionario_gisps3_2 table,#cuestionario_gisps3_3 table
+
+  {
+
+    width:100%;	font-size:30px;
+
+  }
+
+
+  #cuestionario_cat table td, #cuestionario_cat2 table td, #cuestionario_cat3 table td ,#cuestionario_gisps3 table td , #cuestionario_gisps3_2 table td ,#cuestionario_gisps3_3 table td
+
+  {
+
+    padding:10px;
+
+  }
+
+
+  .pregunta
+
+  {
+
+    padding:10px;
+
+  }
+
+
+  #select_epoc
+
+  {
+
+    font-size: 50px;
+
+  }
+
+
+  #boton_term_cat, #resultado_cat, #boton_term_gisps3, #resultado_gisps3, #boton_term_cat_2, #resultado_cat_2, #boton_term_cat_3, #resultado_cat_3,  #boton_term_gisps3_2, #boton_term_gisps3_3, #resultado_gisps3_2, #resultado_gisps3_3
+
+  {
+
+    font-size:30px;
+
+    width:30%;
+
+  }
+
+}
+
+
+@media screen and (max-width: 6px)
+
+{
+
+  body
+
+  {
+
+    font-size:40px;
+
+  }
+
+
+  #tabla_principal_paliativo, #tabla_principal_epoc
+
+  {
+
+    width:95%;
+
+  }
+
+}

@@ -1,0 +1,177 @@
+
+<!-- <p>
+    id: {{paliativo.id}}
+  </p>
+  <p>
+    enfermera: {{paliativo.enfermera}}
+  </p>
+  <p>
+    Nuhsa: {{paliativo.nuhsa}}
+  </p> -->
+  <app-menu></app-menu>
+  <div id="contSecund">
+ <table  id="tabla_principal_paliativo" class="tabla_principal">
+	<thead>
+		<tr >
+			<th scope="col" colspan="2">Seguimiento individual Paliativos</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="prim_col" >
+			<label for="ugc">UGC</label>
+				</td>
+				<td>
+            <input type="text" class="form-control" name="ugc" id="ugc" value="{{ paliativo.ugc }}" >
+			 </td>
+			</tr>
+	<tr class="impar">
+      <td colspan="3" >
+			<div class="input-group ">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="span_nuhsa">NUHSA</span>
+					</div>
+					<input type="text" class="form-control" name="numero_id" id="nuhsa" value="{{ paliativo.nuhsa }}" >
+			</div>
+		</td>
+	</tr>
+	<tr>
+        <td class="prim_col" >
+					<label for="fecha_visita">Fecha de la visita</label>
+		</td>
+		<td>
+			<input type="date" name="fecha_visita" value="{{ paliativo.fecha_visita }}" id="fecha_visita">
+		</td>
+	</tr>
+	 <tr class="impar">
+			<td class="prim_col">
+					<label for="select_paliativo">Paliativo</label>
+			</td>
+			<td>
+					<select class="custom-select custom-select-lg  select_varios" id="select_paliativo" name="select_paliativo" [(ngModel)]="paliativo.paliativo">
+							<option  value="0">Oncológico</option>
+							<option  value="1" >No oncológico</option>
+					</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="prim_col">
+					<label for="select_incl_pai">Incluido Pai Paliativos</label>
+			</td>
+			<td>
+					<select class="custom-select custom-select-lg  select_varios" id="select_incl_pai" name="select_incl_pai" [(ngModel)]="paliativo.incl_paliativo">
+							<option value="0">No</option>
+							<option value="1">Si</option>
+					</select>
+			</td>
+		</tr>
+		<tr class="impar">
+			<td class="prim_col">
+					<label for="select_lista_mc">Lista problemas codigo CIE McNamara</label>
+			</td>
+			<td>
+					<select class="custom-select custom-select-lg  select_varios" id="select_lista_mc" name="select_lista_mc" [(ngModel)]="paliativo.cod_cie_mac">
+							<option value="0">No</option>
+							<option  value="1">Si</option>
+					</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="prim_col">
+				<label for="select_lista_v667">Lista problemas codigo V66.7</label>
+			</td>
+			<td>
+				 <select class="custom-select custom-select-lg  select_varios" id="select_lista_v667" name="select_lista_v667" [(ngModel)]="paliativo.cod_v667">
+						<option  value="0">No</option>
+						<option  value="1">Si</option>
+				</select>
+			</td>
+		</tr>
+			<tr class="impar">
+				<td class="prim_col">
+						<label for="select_incl_web">Incluido web paliativos</label>
+				</td>
+				<td>
+						<select class="custom-select custom-select-lg  select_varios" id="select_incl_web" name="select_incl_web" [(ngModel)]="paliativo.incl_web_pal">
+								<option  value="0">No</option>
+								<option  value="1">Si</option>
+						</select>
+				</td>
+			</tr>
+			<tr>
+        <td class="prim_col">
+            <label for="select_pad_anual">Realizada Pad anual</label>
+        </td>
+        <td>
+            <select class="custom-select custom-select-lg  select_varios" id="select_pad_anual" name="select_pad_anual" [(ngModel)]="paliativo.pad_anual">
+                <option value="0">No</option>
+                <option value="1">Si</option>
+            </select>
+        </td>
+      </tr>
+      <tr class="impar">
+        <td class="prim_col">
+            <label for="select_serv_inm">Incluido servicio inmovilizado</label>
+        </td>
+        <td>
+            <select class="custom-select custom-select-lg  select_varios" id="select_serv_inm" name="select_serv_inm" [(ngModel)]="paliativo.incl_serv_inm">
+                <option value="0">No</option>
+                <option  value="1">Si</option>
+            </select>
+				</td>
+			</tr>
+			<tr>
+        <td class="prim_col">
+            <label for="select_pap">PAP</label>
+        </td>
+        <td>
+            <select class="custom-select custom-select-lg  select_varios" id="select_pap" name="select_pap" [(ngModel)]="paliativo.pap">
+                <option   value="0">No</option>
+                <option  value="1">Si</option>
+            </select>
+        </td>
+      </tr>
+      <tr class="impar">
+        <td class="prim_col">
+            <label for="select_exitus">Exitus</label>
+        </td>
+        <td>
+            <select class="custom-select custom-select-lg  select_varios" id="select_exitus" name="select_exitus" [(ngModel)]="paliativo.exitus">
+                <option value="0">Hospital</option>
+                <option  value="1">Domicilio</option>
+                <option  value="2">Otro</option>
+            </select>
+        </td>
+		</tr>
+		<tr>
+        <td class="prim_col">
+            <label for="select_fin_seg">Fin seguimiento</label>
+        </td>
+        <td>
+            <select class="custom-select custom-select-lg  select_varios" id="select_fin_seg" name="select_fin_seg" [(ngModel)]="paliativo.fin_seguimiento">
+                <option  value="0">No procede</option>
+                <option  value="1">Traslado fuera UGC</option>
+                <option  value="2">Exitus</option>
+                <option value="3">Otro</option>
+            </select>
+        </td>
+			</tr>
+			<tr>
+				<td >
+
+				</td>
+				<td >
+
+				</td>
+				<td >
+
+				</td>
+			</tr>
+		</tbody>
+  </table>
+  <div id="botones">
+      <input type="button" value="Volver" id="botonVolver" (click)="goBack()">
+      <input type="submit" value="Grabar" (click)="save()">
+      <input type="button" value="Eliminar registro" id="borrarPaliativo">
+  </div>
+</div>

@@ -1,10 +1,37 @@
-<a routerLink="/epoc">
+
+ <table class="table table-striped tabla_principal" id="tabla_principal_epoc">
+  <thead>
+    <tr >
+      <th scope="col" colspan="2"><a routerLink="/menu-epoc">Registros de EPOC</a></th>
+      <th colspan="2"><a href="generar_excel_epoc_phpexcel.php">Generar Excel</a></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>NUHSA</th>
+      <th>UGC</th>
+      <th>Fecha visita</th>
+      <th>Tipo EPOC</th>
+  </tr>
+
+  <tr *ngFor="let paciente of pacientesEpoc">
+
+    <td><a routerLink="/detail-epoc/{{paciente.id}}"> {{ paciente.nuhsa }}</a></td>
+    <td>{{ paciente.ugc }}</td>
+    <td>{{ paciente.fecha_visita }}</td>
+    <td>{{ paciente.tipo_epoc }} </td>
+  </tr>
+
+ </tbody>
+</table>
+
+<!-- <a routerLink="/epoc">
   <h2>Pacientes Epoc</h2>
 </a>
 <ul class="pacientes">
     <li *ngFor="let paciente of pacientesEpoc">
-      <a routerLink="epoc/detail/{{paciente.id}}">
+      <a routerLink="/detail/{{paciente.id}}">
         <span >{{ paciente.id }}</span> {{ paciente.nuhsa }}
       </a>
     </li>
-  </ul>
+  </ul> -->

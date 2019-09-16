@@ -8,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-paliativos',
   templateUrl: './paliativos.component.html',
-  styleUrls: ['./paliativos.component.css']
+  styleUrls: ['./paliativos.component.css','./../../app.component.css']
 })
 export class PaliativosComponent implements OnInit {
 
   pacientesPal: Paliativos[];
 
-  
+
   constructor(private taskService:TaskService) { }
 
   ngOnInit()
@@ -28,10 +28,6 @@ export class PaliativosComponent implements OnInit {
     .subscribe(pacientes => this.pacientesPal = pacientes);
     console.log('pacientes:' + this.pacientesPal);
   }
-
-
- 
-
 
 
 }

@@ -1,3 +1,812 @@
-<p>
-  detail-epoc works!
-</p>
+
+<app-menu></app-menu>
+<table  id="tabla_principal_epoc" class="tabla_principal">
+  <thead>
+    <tr >
+      <th scope="col" colspan="2">Seguimiento individual EPOC</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td class="prim_col" >
+    <label for="ugc">UGC</label>
+      </td>
+      <td >       
+        <input type="text" class="form-control" name="ugc" id="ugc" value="{{epoc.ugc}}" >      
+    </td>
+  </tr>
+  <tr class="impar">
+    <td colspan="3" >
+          <div class="input-group ">
+             <div class="input-group-prepend">
+                <span class="input-group-text" id="span_nuhsa">NUHSA</span>
+              </div>
+              <input type="text" class="form-control" name="numero_id" id="nuhsa" value="{{epoc.nuhsa}}" >
+          </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="prim_col" >
+        <label for="fecha_visita">Fecha de la visita</label>
+      </td>
+      <td>      
+        <input type="date" name="fecha_visita" value="{{epoc.fecha_visita}}" id="fecha_visita">
+      </td>
+      <td></td>
+    </tr>
+    <tr class="impar">
+      <td class="prim_col" >
+          <label for="tipo_visita">Tipo de visita</label>
+      </td>
+      <td >
+          <select class="custom-select custom-select-lg  select_varios" id="select_tipo_v" name="tipo_visita">
+            <option value="1" >Alta</option>
+            <option value="2" >3 Meses</option>
+            <option value="3" >Año</option>
+          </select>
+        </td>
+    </tr>
+    <tr>
+      <td class="prim_col" >
+          <label for="select_epoc">Tipo de EPOC</label>
+      </td>
+      <td >
+          <select class="custom-select custom-select-lg  select_varios" id="select_epoc" name="select_epoc">
+              <option  value="1">Moderado MRC = 2</option>
+              <option  value="2">Grave MRC > 2</option>
+            </select>
+      </td>
+      <td></td>
+    </tr>
+    <tr class="impar">
+      <td class="prim_col">
+            <label for="select_proc">Procedencia</label>
+      </td>
+      <td >
+          <select class="custom-select custom-select-lg  select_varios" id="select_proc" name="select_proc">
+              <option  value="1">HRU</option>
+              <option  value="2">HUVV</option>
+              <option  value="3">Atención Primaria</option>
+          </select>
+        </td>
+    </tr>
+    <tr>
+      <td class="prim_col" >
+        <label for="fecha_alta">Fecha de alta</label>
+      </td>
+      <td>
+        <input type="date" name="fecha_alta" value="{{epoc.fecha_alta}}">
+      </td>
+      <td></td>
+    </tr>
+     <tr class="impar">
+      <td class="prim_col" >
+        <label for="fecha_com" style="display:block;">Fecha de comunicación de alta EGCH o inclusión por EGCAP</label>
+      </td>
+      <td>
+        <input type="date" name="fecha_com" value="" id="fecha_com">
+      </td>
+    </tr>
+    <tr>
+      <td class="prim_col" >
+          <label for="contacto_48">Contacto 48h hábiles</label>
+        </td>
+        <td>
+          <select class="custom-select custom-select-lg  select_varios" id="contacto_48" name="contacto_48">
+            <option   value="0">NO</option>
+            <option   value="1">SI</option>
+          </select>
+        </td>
+      <td></td>
+    </tr>
+    <tr class="impar">
+      <td class="prim_col" colspan="3">
+          <label for="sat">SAT. 02 > 90%</label>
+      </td>     
+    </tr>
+   <tr class="impar">
+      <td class="medio">
+        <div>Al alta</div>
+        <div>
+          <select class="custom-select custom-select-lg  select_varios" id="sat1" name="sat1">
+            <option  value="0">NO</option>
+            <option  value="1">SI</option>
+          </select>
+        </div>
+      </td>
+        <td class="medio">
+          <div>A los 3 meses</div>
+          <div>
+            <select class="custom-select custom-select-lg  select_varios" id="sat2" name="sat2">
+              <option value="2">-</option>
+              <option  value="0">NO</option>
+              <option  value="1">SI</option>
+            </select>
+          </div>
+        </td>
+        <td class="medio">
+          <div>Al año</div>
+          <div>
+            <select class="custom-select custom-select-lg  select_varios" id="sat3" name="sat3">
+              <option  value="2">-</option>
+              <option  value="0">NO</option>
+              <option  value="1">SI</option>
+            </select>
+          </div>
+        </td>
+    </tr>
+     <tr>
+      <td class="prim_col" colspan="3">
+        <label for="cat">CAT</label>
+      </td>
+    </tr>
+    <tr>
+      <td class="medio">
+        <div>Al alta</div>
+        <div>
+          <input type="number" id="cat" name="cat1" style="width:80px;" value="" >
+          <input type="button" id="boton_cat" value="Cuestionario" >
+        </div>
+      </td>
+      <td class="medio">
+          <div>A los 3 meses</div>
+          <div>
+            <input type="number" id="cat2" name="cat2" style="width:80px;" value="" >
+            <input type="button" id="boton_cat2" value="Cuestionario" >
+          </div>
+      </td>
+      <td class="medio">
+          <div>Al año</div>
+          <div>
+            <input type="number" id="cat3" name="cat3" style="width:80px;" value="" >
+            <input type="button" id="boton_cat3" value="cuestionario" >
+          </div>
+      </td>
+     </tr>
+  <tr class="impar">
+    <td class="prim_col" colspan="3">
+      <label for="gisps3">Cumple régimen terapéutico GISPS3 (>=11)</label>
+    </td>
+  </tr>
+  <tr class="impar">
+    <td class="medio">
+      <div>Al alta</div>
+      <div>
+        <input type="text" id="gisps3" name="gisps3_1" style="width:80px;" value="" >
+        <input type="button" id="boton_gisps3" value="Cuestionario" >
+      </div>
+    </td>
+    <td class="medio">
+          <div>A los 3 meses</div>
+          <div>
+            <input type="text" id="gisps3_2" name="gisps3_2" style="width:80px;" value="" >
+            <input type="button" id="boton_gisps3_2" value="Cuestionario" >
+          </div>
+    </td>
+      <td class="medio">
+          <div>Al año</div>
+          <div>
+            <input type="text" id="gisps3_3" name="gisps3_3" style="width:80px;" value="" >
+              <input type="button" id="boton_gisps3_3" value="Cuestionario" >
+          </div>
+      </td>
+  </tr>
+   <tr>
+    <td class="prim_col" colspan="3">
+          <label for="tto_inhalador">Tto.inhalador manejo efectivo</label>
+        </td>
+  </tr>
+  <tr>
+    <td class="medio">
+      <div>Al alta</div>
+      <div>
+        <select class="custom-select custom-select-lg  select_varios" id="tto_inhalador1" name="tto_inhalador1">
+          <option value="0" >NO</option>
+          <option value="1" >SI</option>
+        </select>
+      </div>
+    </td>
+    <td class="medio">
+          <div>A los 3 meses</div>
+          <div>
+            <select class="custom-select custom-select-lg  select_varios" id="tto_inhalador2" name="tto_inhalador2">
+              <option value="2" >-</option>
+              <option value="0" >NO</option>
+              <option value="1" >SI</option>
+            </select>
+          </div>
+    </td>
+     <td class="medio">
+          <div>Al año</div>
+         <div>
+            <select class="custom-select custom-select-lg  select_varios" id="tto_inhalador3" name="tto_inhalador3">
+              <option value="2" >-</option>
+              <option value="0" >NO</option>
+              <option value="1" >SI</option>
+            </select>
+          </div>
+     </td>
+  </tr>
+    <tr class="impar">
+      <td class="prim_col" colspan="3">
+        <div>
+          <label for="alarma">Conoce signos de alarma y actuación</label>
+        </div>
+        <div>
+          <select class="custom-select custom-select-lg  select_varios" id="alarma" name="alarma">
+            <option value="0" >NO</option>
+            <option value="1"  >SI</option>
+          </select>
+        </div>
+        </td>
+    </tr>
+    <tr>
+      <td class="prim_col" colspan="3">
+          <div>
+          <label for="fuma">Fuma</label>
+          </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+          <div>Al alta </div>
+          <div>
+            <select class="custom-select custom-select-lg  select_varios" id="fuma1" name="fuma1">
+              <option value="0" >NO</option>
+              <option value="1" >SI</option>
+            </select>
+          </div>
+        </td>
+        <td class="medio">
+          <div>A los 3 meses</div>
+          <div>
+            <select class="custom-select custom-select-lg  select_varios" id="fuma2" name="fuma2">
+              <option value="2" >-</option>
+              <option value="0" >NO</option>
+              <option value="1" >SI</option>
+            </select>
+        </div>
+        </td>
+         <td class="medio">
+          <div>Al año</div>
+          <div>
+            <select class="custom-select custom-select-lg  select_varios" id="fuma3" name="fuma3">
+              <option value="2" >-</option>
+              <option value="0" >NO</option>
+              <option value="1" >SI</option>
+             </select>
+          </div>
+        </td>
+    </tr>
+   <!-- <tr class="impar">
+
+
+      <td class="prim_col" colspan="3">
+
+
+        <label for="int_antitabaco">Intervención anti-tabaco</label>
+
+
+      </td>
+
+
+    </tr>
+
+
+  <tr class="impar">
+
+
+    <td colspan="2">
+
+
+           <select class="custom-select custom-select-lg  select_varios" id="int_antitabaco" name="int_antitabaco">
+
+
+             <option value="1" <?php echo $paciente['int_antitabaco']==='1' ? 'selected' : '';  ?>>NO PROCEDE</option>
+
+
+             <option value="2" <?php echo $paciente['int_antitabaco']==='2' ? 'selected' : '';  ?>>BASICA</option>
+
+
+             <option value="3" <?php echo $paciente['int_antitabaco']==='3' ? 'selected' : '';  ?>>AVANZADA</option>
+
+
+            </select>
+
+
+        </td>
+
+
+        <td ></td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td class="prim_col" colspan="3">
+
+
+          <label for="rehabilitacion">Rehabilitación respiratoria</label>
+
+
+        </td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td colspan="2">
+
+
+         <select class="custom-select custom-select-lg  select_varios" id="rehabilitacion" name="rehabilitacion">
+
+
+            <option value="1" <?php echo $paciente['rehabilitacion']==='1' ? 'selected' : '';  ?>>NO</option>
+
+
+            <option value="2" <?php echo $paciente['rehabilitacion']==='2' ? 'selected' : '';  ?>>FISIO SALA</option>
+
+
+            <option value="3" <?php echo $paciente['rehabilitacion']==='3' ? 'selected' : '';  ?>>FISIO DOMICILIO</option>
+
+
+            <option value="4" <?php echo $paciente['rehabilitacion']==='4' ? 'selected' : '';  ?>>EJERCICIOS RESPIRATORIOS</option>
+
+
+           </select>
+
+
+       </td>
+
+
+    </tr>
+
+
+  <tr class="impar">
+
+
+    <td class="prim_col" colspan="3">
+
+
+      <label for="oxigeno">Oxígeno > 15h al día</label>
+
+
+    </td>
+
+
+  </tr>
+
+
+  <tr class="impar">
+
+
+     <td class="medio">
+
+
+      <div>Al alta</div>
+
+
+      <div>
+
+
+        <select class="custom-select custom-select-lg  select_varios" id="oxigeno1" name="oxigeno1">
+
+            <option value="0" <?php echo $paciente['oxigeno1']==='0' ? 'selected' : '';  ?>>-</option>
+
+
+            <option value="1" <?php echo $paciente['oxigeno1']==='1' ? 'selected' : '';  ?>>NO PROCEDE</option>
+
+
+            <option value="2" <?php echo $paciente['oxigeno1']==='2' ? 'selected' : '';  ?>>SI</option>
+
+
+            <option value="3" <?php echo $paciente['oxigeno1']==='3' ? 'selected' : '';  ?>>NO</option>
+
+
+       </select>
+
+
+      </div>
+
+
+     </td>
+
+
+        <td class="medio">
+
+
+          <div>A los 3 meses</div>
+
+
+          <div>
+
+
+            <select class="custom-select custom-select-lg  select_varios" id="oxigeno2" name="oxigeno2">
+
+
+                  <option value="0" <?php echo ($paciente['oxigeno2']==='0' || $paciente['oxigeno2']===NULL)? 'selected' : '';  ?>>-</option>
+
+
+                  <option value="1" <?php echo $paciente['oxigeno2']==='1' ? 'selected' : '';  ?>>NO PROCEDE</option>
+
+
+                  <option value="2" <?php echo $paciente['oxigeno2']==='2' ? 'selected' : '';  ?>>SI</option>
+
+
+                  <option value="3" <?php echo $paciente['oxigeno2']==='3' ? 'selected' : '';  ?>>NO</option>
+
+
+             </select>
+
+
+          </div>
+
+
+        </td>
+
+
+        <td class="medio">
+
+
+          <div>Al año</div>
+
+
+          <div>
+
+
+            <select class="custom-select custom-select-lg  select_varios" id="oxigeno3" name="oxigeno3">
+
+
+                  <option value="0" <?php echo ($paciente['oxigeno3']==='0' || $paciente['oxigeno3']===NULL)? 'selected' : '';  ?>>-</option>
+
+
+                  <option value="1" <?php echo $paciente['oxigeno3']==='1' ? 'selected' : '';  ?>>NO PROCEDE</option>
+
+
+                  <option value="2" <?php echo $paciente['oxigeno3']==='2' ? 'selected' : '';  ?>>SI</option>
+
+
+                  <option value="3" <?php echo $paciente['oxigeno3']==='3' ? 'selected' : '';  ?>>NO</option>
+
+
+             </select>
+
+
+          </div>
+
+
+        </td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+        <td class="prim_col">
+
+
+          <label for="disfagia">Disfagia</label>
+
+
+      </td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+       <td class="medio">
+
+
+        <div>Al alta</div>
+
+
+        <div>
+
+
+          <select class="custom-select custom-select-lg  select_varios" id="disfagia1" name="disfagia1">
+
+
+              <option value="0" <?php echo $paciente['disfagia1']==='0' ? 'selected' : '';  ?>>NO</option>
+
+
+              <option value="1" <?php echo $paciente['disfagia1']==='1' ? 'selected' : '';  ?>>SI</option>
+
+
+            </select>
+
+
+        </div>
+
+
+        </td>
+
+
+        <td class="medio">
+
+
+          <div>A los 3 meses</div>
+
+
+          <div>
+
+
+            <select class="custom-select custom-select-lg  select_varios" id="disfagia2" name="disfagia2">
+
+
+              <option value="2" <?php echo ($paciente['disfagia2']==='2' || $paciente['disfagia2']===NULL)? 'selected' : '';  ?>>-</option>
+
+
+              <option value="0" <?php echo $paciente['disfagia2']==='0' ? 'selected' : '';  ?>>NO</option>
+
+
+              <option value="1" <?php echo $paciente['disfagia2']==='1' ? 'selected' : '';  ?>>SI</option>
+
+
+            </select>
+
+
+          </div>
+
+
+        </td>
+
+
+        <td class="medio">
+
+
+          <div>Al año</div>
+
+
+          <div>
+
+
+            <select class="custom-select custom-select-lg  select_varios" id="disfagia3" name="disfagia3">
+
+
+              <option value="2" <?php echo ($paciente['disfagia3']==='2' || $paciente['disfagia3']===NULL)? 'selected' : '';  ?>>-</option>
+
+
+              <option value="0" <?php echo $paciente['disfagia3']==='0' ? 'selected' : '';  ?>>NO</option>
+
+
+              <option value="1" <?php echo $paciente['disfagia3']==='1' ? 'selected' : '';  ?>>SI</option>
+
+
+            </select>
+
+
+          </div>
+
+
+        </td>
+
+
+    </tr>
+
+
+    <tr class="impar">
+
+
+      <td class="prim_col" colspan="2">
+
+
+            <label for="gripe">Vacuna gripe</label>
+
+
+      </td>
+
+
+        <td >
+
+
+             <select class="custom-select custom-select-lg  select_varios" id="gripe" name="gripe">
+
+
+                  <option value="1" <?php echo $paciente['gripe']==='1' ? 'selected' : '';  ?>>SI</option>
+
+
+                  <option value="2" <?php echo $paciente['gripe']==='2' ? 'selected' : '';  ?>>NO</option>
+
+
+                  <option value="3" <?php echo $paciente['gripe']==='3' ? 'selected' : '';  ?>>CONTRAINDICADO</option>
+
+
+             </select>
+
+
+        </td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td class="prim_col" colspan="2">
+
+
+            <label for="neumococo">Vacuna neumococo</label>
+
+
+        </td>
+
+
+        <td >
+
+
+             <select class="custom-select custom-select-lg  select_varios" id="neumococo" name="neumococo">
+
+
+                  <option value="1" <?php echo $paciente['neumococo']==='1' ? 'selected' : '';  ?>>SI</option>
+
+
+                  <option value="2" <?php echo $paciente['neumococo']==='2' ? 'selected' : '';  ?>>NO</option>
+
+
+                  <option value="3" <?php echo $paciente['neumococo']==='3' ? 'selected' : '';  ?>>CONTRAINDICADO</option>
+
+
+             </select>
+
+
+        </td>
+
+
+        <td></td>
+
+
+    </tr>
+
+
+    <tr class="impar">
+
+
+      <td class="prim_col" colspan="3">
+
+
+        <div>	<label for="reingresos">Reingresos año por reagudización</label></div>
+
+
+        <div><input type="number" name="reingresos" value="<?php echo $paciente['reingresos'];  ?>"></div>
+
+
+      </td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td class="prim_col" colspan="3">
+
+
+        <div><label for="agudizaciones">Agudizaciones resueltas sin ingreso</label></div>
+
+
+          <div><input type="number" name="agudizaciones" value="<?php echo $paciente['agudizaciones'];  ?>"></div>
+
+
+      </td>
+
+
+    </tr>
+
+
+    <tr class="impar">
+
+
+      <td class="prim_col">
+
+
+          <label for="pap">PAP</label>
+
+
+        </td>
+
+
+        <td>
+
+
+          <select class="custom-select custom-select-lg  select_varios" id="pap" name="pap">
+
+
+            <option value="0" <?php echo $paciente['pap']==='0' ? 'selected' : '';  ?>>NO</option>
+
+
+            <option value="1" <?php echo $paciente['pap']==='1' ? 'selected' : '';  ?>>SI</option>
+
+
+          </select>
+
+
+        </td>
+
+
+       <td ></td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td class="prim_col" colspan="3">
+
+
+            <label for="fin_seguimiento">Fin seguimiento</label>
+
+
+        </td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+        <td colspan="3">
+
+
+             <select class="custom-select custom-select-lg  select_varios" id="fin_seguimiento" name="fin_seguimiento">
+
+
+                  <option value="0" <?php echo $paciente['fin_seguimiento']==='0' ? 'selected' : '';  ?>>NO PROCEDE</option>
+
+
+                  <option value="1" <?php echo $paciente['fin_seguimiento']==='1' ? 'selected' : '';  ?>>TRASLADO</option>
+
+
+                  <option value="2" <?php echo $paciente['fin_seguimiento']==='2' ? 'selected' : '';  ?>>INCLUSIÓN PAI PALIATIVO</option>
+
+
+                  <option value="3" <?php echo $paciente['fin_seguimiento']==='3' ? 'selected' : '';  ?>>EXITUS</option>
+
+
+                  <option value="4" <?php echo $paciente['fin_seguimiento']==='4' ? 'selected' : '';  ?>>OTROS</option>
+
+
+             </select>
+
+
+        </td>
+
+
+        <td></td>
+
+
+    </tr>
+
+
+    <tr>
+      <td >
+        <input type="button" value="Volver" id="botonVolver">
+      </td>
+      <td >
+        <input type="submit" value="Grabar">
+      </td>
+      <td >
+        <input type="button" value="Eliminar registro" id="eliminar_epoc">
+      </td>
+    </tr> -->
+
+
+  </tbody>
+
+
+</table>

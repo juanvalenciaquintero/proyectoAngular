@@ -1,6 +1,6 @@
 {
   "/todos*" : {
-    "target": "http://estadisticas.x10host.com",
+    "target": "http://estadisticas.pcriot.com",
     "secure": false,
     "changeOrigin": true
   }

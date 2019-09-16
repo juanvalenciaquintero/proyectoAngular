@@ -1,4 +1,33 @@
-<a routerLink="/paliativos">
+
+<table class="table table-striped tabla_principal" id="tabla_principal_paliativo" >
+  <thead>
+    <tr >
+      <th scope="col" colspan="2"><a routerLink="/menu-paliativos">Registros de Paliativos</a></th>
+      <th colspan="2"><a href="generar_excel_paliativos.php">Generar Excel</a></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Id</th>
+      <th>NUHSA</th>
+      <th>UGC</th>
+      <th>Fecha visita</th>
+      <th >Tipo paliativo</th>
+  </tr>
+
+  <tr *ngFor="let paciente of pacientesPal">
+    <td>{{paciente.id}}</td>
+    <td><a routerLink="/detail-paliativo/{{paciente.id}}">{{ paciente.nuhsa }}</a></td>
+    <td>{{ paciente.ugc }}</td>
+    <td>{{ paciente.fecha_visita }}</td>
+    <td >{{ paciente.paliativo }}</td>
+  </tr>
+
+ </tbody>
+</table>
+
+
+<!-- <a routerLink="/paliativos">
   <h2>Pacientes Paliativos</h2>
 </a>
 <ul class="pacientes">
@@ -7,4 +36,4 @@
       <span >{{ paciente.id }}</span> {{ paciente.nuhsa }}
     </a>
   </li>
-</ul>
+</ul> -->

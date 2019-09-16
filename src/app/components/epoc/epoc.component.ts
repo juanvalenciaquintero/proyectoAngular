@@ -6,7 +6,7 @@ import { TaskService } from './../../services/task.service';
 @Component({
   selector: 'app-epoc',
   templateUrl: './epoc.component.html',
-  styleUrls: ['./epoc.component.css']
+  styleUrls: ['./epoc.component.css','./../../app.component.css']
 })
 export class EpocComponent implements OnInit {
 

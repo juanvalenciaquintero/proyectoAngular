@@ -11,7 +11,7 @@ export interface Paliativos
   cod_v667: number;
   incl_web_pal: number;
   pad_anual: number;
-  incl_serv_inm;
+  incl_serv_inm: number;
   pap: number;
   exitus: number;
   fin_seguimiento: number;
