@@ -79,7 +79,7 @@ export class TaskService {
   /** PUT: update on the server */
   updatePaliativo(paliativo: Paliativos): Observable<any>
   {
-
+     const path = `${this.url}/?paliativo=1&id=${paliativo}`;
      let  headers = new HttpHeaders().set('Content-Type', 'application/json')
         .set("Access-Control-Allow-Origin", '*')
         .set("Access-Control-Allow-Credentials", "true")
@@ -87,7 +87,7 @@ export class TaskService {
         .set("Access-Control-Max-Age", "3600")
         .set("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With, remember-me");
 
-  return this.http.put(this.url, paliativo, { headers: headers }).pipe(
+  return this.http.put(path, paliativo, { headers: headers }).pipe(
 
     catchError(this.handleError<any>('updatePaliativo'))
   );

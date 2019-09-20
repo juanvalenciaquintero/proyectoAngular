@@ -39,6 +39,7 @@ export class DetailPaliativosComponent implements OnInit {
   save(): void {
     this.taskService.updatePaliativo(this.paliativo)
       .subscribe(() => this.goBack());
+
   }
 
 }

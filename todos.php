@@ -1,6 +1,13 @@
 <?php
 
-$conex = mysqli_connect('localhost', 'estadis3_juan', '42180200', 'estadis3_1');
+$conex = mysqli_connect('localhost', 'estadis8_juan', '42180200', 'estadis8_estadisticas');
+
+$datosPUT = fopen("php://input", "r");
+
+
+if ($_SERVER['REQUEST_METHOD']==='PUT') {
+  echo json_encode($datosPUT);
+}
 
 if (isset($_GET['valor']) && $_GET['valor']==='1')
 {
@@ -71,7 +78,7 @@ if (isset($_GET['valor']) && $_GET['valor']==='1')
    echo json_encode($datos);
    //echo $datos;
   }
-  
+
   if (isset($_GET['valor']) && $_GET['valor']==='2')
 {
 
@@ -85,7 +92,7 @@ if (isset($_GET['valor']) && $_GET['valor']==='1')
    array_push($datos,$fila);
   }
   echo json_encode($datos);
-  
+
 }
 
  if ((isset($_GET['epoc']) ) && ($_GET['epoc']==='1'))
@@ -101,7 +108,7 @@ if (isset($_GET['valor']) && $_GET['valor']==='1')
    array_push($datos,$fila);
   }
   echo json_encode($datos);
-  
+
 }
 
 if (isset($_GET['paliativo']) && ($_GET['paliativo']==='1'))
@@ -115,10 +122,8 @@ if (isset($_GET['paliativo']) && ($_GET['paliativo']==='1'))
    array_push($datos,$fila);
   }
   echo json_encode($datos);
-  
+
 }
-
-
 
 
   ?>
