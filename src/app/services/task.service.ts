@@ -20,7 +20,7 @@ export class TaskService {
   {
     const path = '/todos.php?valor=1';
     //const path = 'https://jsonplaceholder.typicode.com/todos';
-    //const path = 'http://estadisticas.x10host.com/todos';
+    //const path = 'http://estadisticas.10001mb.com/todos?valor=1';
     let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded')
     .set("Access-Control-Allow-Origin", '*')
     .set("Access-Control-Allow-Credentials", "true")

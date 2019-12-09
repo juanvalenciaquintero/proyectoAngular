@@ -54,9 +54,9 @@ if (isset($_GET['valor']) && $_GET['valor']==='1')
 {
 
   //$sql = mysqli_query($conex,'SELECT id as userId, ugc as id, nuhsa as title, "false" as completed FROM datos_visitas_paliativos');
-  $sql = mysqli_query($conex,'SELECT DVE.*, UGC.nombre as ugc
+  $sql = mysqli_query($conex,'SELECT DVE.id, DVE.nuhsa, DVE.fecha_visita, UGC.nombre as ugc, DVE.tipo_epoc
                               FROM datos_visitas_epoc DVE, ugc UGC
-                              WHERE DVE.id=' . $_GET['id'] .
+                              WHERE id=' . $_GET['id'] .
                               ' AND DVE.ugc = UGC.id');
 
   $datos=array();
@@ -71,9 +71,9 @@ if (isset($_GET['valor']) && $_GET['valor']==='1')
 
 if (isset($_GET['paliativo']) && ($_GET['paliativo']==='1'))
 {
-    $sql = mysqli_query($conex,'SELECT DVP.*, UGC.nombre as ugc
+    $sql = mysqli_query($conex,'SELECT DVP.id, DVP.nuhsa, DVP.fecha_visita, UGC.nombre as ugc, DVP.paliativo
                                  FROM datos_visitas_paliativos DVP, ugc UGC
-                                 WHERE DVP.id=' . $_GET['id'] .
+                                 WHERE id=' . $_GET['id'] .
                                ' AND DVP.ugc = UGC.id');
 
   $datos=array();
